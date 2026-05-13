@@ -572,9 +572,15 @@ def main():
     print("\n" + "="*80)
     print("Results")
     print("="*80)
-    for result in all_results:
-        print("\n" + "-"*60)
-        print_result(result)
+    # for result in all_results:
+    #     print("\n" + "-"*60)
+    #     print_result(result)
+    output_path = "vibevoice_asr_result.json"
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(all_results, f, ensure_ascii=False, indent=2)
+
+    print(f"\nSaved JSON result to: {output_path}")
 
 
 if __name__ == "__main__":
